@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Sparkles, Cpu, CheckCircle2 } from "lucide-react";
+import { Sparkles, Cpu, CheckCircle2 } from "lucide-react";
 
 export function About() {
   return (

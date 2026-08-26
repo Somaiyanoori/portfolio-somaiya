@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2, Sparkles } from "lucide-react";
-import { NAV_ITEMS, SITE_DATA } from "@/lib/constants";
+import { Menu, X, Sparkles } from "lucide-react";
+import { NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -23,7 +23,7 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed left-0 right-0 top-0 z-40 px-4 transition-all duration-300 md:px-8",
+          "fixed top-0 right-0 left-0 z-40 px-4 transition-all duration-300 md:px-8",
           isScrolled ? "py-3" : "py-6"
         )}
       >
@@ -31,12 +31,12 @@ export function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            className="glass group flex items-center gap-2 rounded-xl px-3 py-2 transition-colors hover:border-primary/40"
+            className="group glass hover:border-primary/40 flex items-center gap-2 rounded-xl px-3 py-2 transition-colors"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-primary font-mono text-sm font-bold text-white shadow-md">
+            <div className="bg-gradient-primary flex h-8 w-8 items-center justify-center rounded-lg font-mono text-sm font-bold text-white shadow-md">
               SN
             </div>
-            <span className="font-mono text-sm font-semibold tracking-tight text-white transition-colors group-hover:text-primary">
+            <span className="group-hover:text-primary font-mono text-sm font-semibold tracking-tight text-white transition-colors">
               somaiya.dev
             </span>
           </a>
@@ -58,7 +58,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="navPill"
-                      className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary to-info"
+                      className="from-primary to-info absolute inset-0 -z-10 rounded-full bg-gradient-to-r"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -72,7 +72,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="glow-pink hidden items-center gap-2 rounded-full bg-gradient-primary px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
+              className="bg-gradient-primary glow-pink hidden items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
             >
               <Sparkles className="h-3.5 w-3.5" />
               <span>Let's Talk</span>
@@ -115,7 +115,7 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 rounded-xl bg-gradient-primary px-4 py-3 text-center text-sm font-semibold text-white"
+                className="bg-gradient-primary mt-2 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white"
               >
                 Get In Touch
               </a>

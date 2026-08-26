@@ -12,7 +12,6 @@ export async function POST(req: Request) {
     const body = await req.json();
     const validatedData = contactSchema.parse(body);
 
-    // Logs the validated message (in production, integrate Resend or Nodemailer)
     console.warn("📩 New Contact Form Submission:", validatedData);
 
     return NextResponse.json(
@@ -22,7 +21,7 @@ export async function POST(req: Request) {
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { success: false, message: error.errors[0].message },
+        { success: false, message: error.issues[0]?.message || "Invalid input" },
         { status: 400 }
       );
     }

@@ -1,4 +1,4 @@
-import { Code, Database, Globe, Layout, Server, Shield, Sparkles, TestTube } from "lucide-react";
+import { Database, Globe, Layout, Server, Shield, TestTube } from "lucide-react";
 
 export const SKILLS = [
   {
@@ -39,8 +39,8 @@ export const PROJECTS = [
     description:
       "Full-stack government portal with JWT/RBAC, CRUD workflows, audit logging, real-time notifications, localization, and responsive UI.",
     tech: ["React", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Docker"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Somaiyanoori",
+    live: "https://github.com/Somaiyanoori",
     featured: true,
   },
   {
@@ -48,8 +48,8 @@ export const PROJECTS = [
     description:
       "Opportunity platform with authentication, search/filtering, bookmarks, profiles, CV building, and automated testing.",
     tech: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Clerk"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Somaiyanoori",
+    live: "https://github.com/Somaiyanoori",
     featured: true,
   },
   {
@@ -57,8 +57,8 @@ export const PROJECTS = [
     description:
       "Backend APIs for design uploads and visual feedback with Firebase Auth, Firestore, Cloudinary, validation, and rate limiting.",
     tech: ["Next.js 15 API", "Firebase", "Cloudinary", "Zod", "Jest"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Somaiyanoori",
+    live: "https://github.com/Somaiyanoori",
     featured: false,
   },
   {
@@ -66,8 +66,8 @@ export const PROJECTS = [
     description:
       "Productivity application for creating and tracking goals with responsive UI, forms, state management, and backend integration.",
     tech: ["React", "TypeScript", "Node.js"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Somaiyanoori",
+    live: "https://github.com/Somaiyanoori",
     featured: false,
   },
 ];
