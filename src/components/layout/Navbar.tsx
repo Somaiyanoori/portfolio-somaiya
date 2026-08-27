@@ -14,23 +14,76 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
+
+      // Active section detection (scroll spy)
+      const sections = NAV_ITEMS.map((item) => {
+        const id = item.href.replace("#", "");
+        const el = document.getElementById(id);
+        if (!el) return null;
+
+        const rect = el.getBoundingClientRect();
+        return {
+          name: item.name,
+          top: rect.top,
+          bottom: rect.bottom,
+        };
+      }).filter(Boolean) as { name: string; top: number; bottom: number }[];
+
+      // Pick the section whose top is closest under the navbar
+      const OFFSET = 120;
+      let current = "Home";
+
+      for (const section of sections) {
+        if (section.top <= OFFSET && section.bottom > OFFSET) {
+          current = section.name;
+          break;
+        }
+      }
+
+      // Near bottom of page → force Contact active
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
+        current = "Contact";
+      }
+
+      setActive(current);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
+
+  const handleNavClick = (name: string, href: string) => {
+    setActive(name);
+    setMobileOpen(false);
+
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <>
       <header
         className={cn(
           "fixed top-0 right-0 left-0 z-40 px-4 transition-all duration-300 md:px-8",
-          isScrolled ? "py-3" : "py-6"
+          isScrolled ? "glass py-3" : "py-6"
         )}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("Home", "#home");
+            }}
             className="group glass hover:border-primary/40 flex items-center gap-2 rounded-xl px-3 py-2 transition-colors"
           >
             <div className="bg-gradient-primary flex h-8 w-8 items-center justify-center rounded-lg font-mono text-sm font-bold text-white shadow-md">
@@ -49,7 +102,10 @@ export function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setActive(item.name)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.name, item.href);
+                  }}
                   className={cn(
                     "relative rounded-full px-4 py-2 text-xs font-medium transition-all duration-200",
                     isActive ? "text-white" : "text-gray-400 hover:text-white"
@@ -68,10 +124,14 @@ export function Navbar() {
             })}
           </nav>
 
-          {/* CTA & Mobile Toggle */}
+          {/* CTA + Mobile */}
           <div className="flex items-center gap-3">
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick("Contact", "#contact");
+              }}
               className="bg-gradient-primary glow-pink hidden items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
             >
               <Sparkles className="h-3.5 w-3.5" />
@@ -89,7 +149,7 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -103,22 +163,20 @@ export function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => {
-                    setActive(item.name);
-                    setMobileOpen(false);
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.name, item.href);
                   }}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-gray-300 transition-colors hover:bg-white/5 hover:text-white"
+                  className={cn(
+                    "rounded-xl px-4 py-3 text-sm font-medium transition-colors",
+                    active === item.name
+                      ? "bg-primary/20 text-white"
+                      : "text-gray-300 hover:bg-white/5 hover:text-white"
+                  )}
                 >
                   {item.name}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
-                className="bg-gradient-primary mt-2 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white"
-              >
-                Get In Touch
-              </a>
             </div>
           </motion.div>
         )}

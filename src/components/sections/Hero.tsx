@@ -128,11 +128,13 @@ export function Hero() {
 
           <a
             href="/resume.pdf"
-            download
+            download="Somaiya_Noori_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass text-accent border-accent/30 hover:border-accent/60 flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-semibold transition-all hover:scale-105 hover:bg-white/10 active:scale-95"
           >
             <Download className="h-4 w-4" />
-            Download CV
+            <span>Download CV</span>
           </a>
 
           <a
