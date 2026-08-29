@@ -2,17 +2,22 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 import { SITE_DATA } from "@/lib/constants";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
 export function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
       setErrorMessage("Please fill in all fields.");
@@ -20,6 +25,7 @@ export function Contact() {
     }
 
     setStatus("loading");
+    setErrorMessage("");
 
     try {
       const res = await fetch("/api/contact", {
@@ -28,11 +34,12 @@ export function Contact() {
         body: JSON.stringify(formData),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (res.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        const data = await res.json();
         setStatus("error");
         setErrorMessage(data.message || "Failed to send message.");
       }
@@ -52,15 +59,15 @@ export function Contact() {
           className="mb-16 text-center"
         >
           <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">
-            Get In <span className="gradient-text">Touch</span>
+            Let&apos;s Build <span className="gradient-text">Quality Software</span> Together.
           </h2>
-          <p className="mx-auto max-w-lg text-sm text-gray-400 md:text-base">
-            Have a project in mind, an open position, or just want to connect? Let's talk!
+          <p className="mx-auto max-w-2xl text-sm text-gray-400 md:text-base">
+            I am open to Full-Stack Developer roles, Remote positions, and Technical Collaborations.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-          {/* Left Info Box */}
+          {/* Left: Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -73,7 +80,13 @@ export function Contact() {
                 <Sparkles className="text-accent h-5 w-5" />
               </h3>
 
+              <p className="text-sm leading-relaxed text-gray-400">
+                {SITE_DATA.availability ||
+                  "Open to Full-Stack roles, Remote work, and technical collaborations worldwide."}
+              </p>
+
               <div className="space-y-4 text-sm text-gray-300">
+                {/* Email */}
                 <a
                   href={`mailto:${SITE_DATA.email}`}
                   className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-white/5"
@@ -87,23 +100,44 @@ export function Contact() {
                   </div>
                 </a>
 
+                {/* Phone */}
+                {SITE_DATA.phone && (
+                  <a
+                    href={`tel:${SITE_DATA.phone}`}
+                    className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-white/5"
+                  >
+                    <div className="bg-accent/20 text-accent rounded-xl p-3 transition-transform group-hover:scale-110">
+                      <Phone className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-400">Phone</div>
+                      <div className="font-medium text-white">{SITE_DATA.phone}</div>
+                    </div>
+                  </a>
+                )}
+
+                {/* Location */}
                 <div className="flex items-center gap-4 rounded-xl p-3">
-                  <div className="bg-accent/20 text-accent rounded-xl p-3">
+                  <div className="bg-info/20 text-info rounded-xl p-3">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
                     <div className="text-xs text-gray-400">Location</div>
-                    <div className="font-medium text-white">{SITE_DATA.location}</div>
+                    <div className="font-medium text-white">
+                      {SITE_DATA.location} (Available for Remote Work Worldwide)
+                    </div>
                   </div>
                 </div>
               </div>
 
+              {/* Social */}
               <div className="flex gap-4 border-t border-white/10 pt-4">
                 <a
                   href={SITE_DATA.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass rounded-xl p-3 text-white transition-colors hover:bg-white/10"
+                  aria-label="GitHub"
                 >
                   <GithubIcon className="h-5 w-5" />
                 </a>
@@ -112,14 +146,22 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass text-info rounded-xl p-3 transition-colors hover:bg-white/10"
+                  aria-label="LinkedIn"
                 >
                   <LinkedinIcon className="h-5 w-5" />
+                </a>
+                <a
+                  href={`mailto:${SITE_DATA.email}`}
+                  className="glass text-primary rounded-xl p-3 transition-colors hover:bg-white/10"
+                  aria-label="Email"
+                >
+                  <Mail className="h-5 w-5" />
                 </a>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Form Box */}
+          {/* Right: Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -152,10 +194,10 @@ export function Contact() {
               <div>
                 <label className="mb-2 block font-mono text-xs text-gray-300">Message</label>
                 <textarea
-                  rows={4}
+                  rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="How can I help you?"
+                  placeholder="Tell me about a role, project, or collaboration..."
                   className="focus:border-primary w-full resize-none rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:outline-none"
                 />
               </div>

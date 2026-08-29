@@ -2,70 +2,193 @@ import { Database, Globe, Layout, Server, Shield, TestTube } from "lucide-react"
 
 export const SKILLS = [
   {
-    category: "Frontend",
+    category: "Frontend Mastery",
     icon: Layout,
-    items: ["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Material UI", "Zustand"],
+    items: [
+      "React 19",
+      "Next.js (App Router)",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "TanStack Query",
+      "Zustand",
+      "Redux Toolkit",
+      "React Hook Form",
+      "Zod",
+      "i18next (RTL/LTR)",
+    ],
   },
   {
-    category: "Backend",
+    category: "Backend & Infrastructure",
     icon: Server,
-    items: ["Node.js", "Express.js", "Next.js API", "REST APIs"],
+    items: ["Node.js", "Express.js", "Next.js API Routes", "REST APIs", "Socket.io", "Cloudinary"],
   },
   {
-    category: "Database",
+    category: "Databases",
     icon: Database,
-    items: ["PostgreSQL", "Prisma", "Supabase", "Firebase", "Redis"],
+    items: ["PostgreSQL", "Prisma ORM", "Supabase", "Firebase", "Redis"],
   },
   {
-    category: "Auth & Security",
+    category: "Security by Design",
     icon: Shield,
-    items: ["JWT", "Clerk", "Firebase Auth", "RBAC", "bcrypt"],
+    items: [
+      "JWT + Refresh Tokens",
+      "HttpOnly Cookies",
+      "RBAC",
+      "RLS",
+      "bcrypt",
+      "Rate Limiting",
+      "Helmet",
+      "Clerk / OAuth",
+    ],
   },
   {
     category: "Testing & QA",
     icon: TestTube,
-    items: ["Vitest", "Playwright", "Jest", "API Testing", "E2E Testing"],
+    items: [
+      "Vitest",
+      "Jest",
+      "Playwright",
+      "React Testing Library",
+      "Supertest",
+      "API Testing",
+      "Manual QA",
+    ],
   },
   {
-    category: "Tools & DevOps",
+    category: "DevOps & Tooling",
     icon: Globe,
-    items: ["Git/GitHub", "Docker", "Vercel", "GitHub Actions", "Postman"],
+    items: [
+      "Git / GitHub",
+      "GitHub Actions CI/CD",
+      "Docker",
+      "Docker Compose",
+      "Postman",
+      "Swagger/OpenAPI",
+      "Vercel",
+      "Render",
+    ],
+  },
+];
+
+export const PRINCIPLES = [
+  {
+    title: "Clean & Type-Safe",
+    description: "Self-documenting code using strict TypeScript and Zod validation schemas.",
+  },
+  {
+    title: "Security by Design",
+    description:
+      "Row Level Security, JWT refresh token rotation, bcrypt hashing, and rate limiting.",
+  },
+  {
+    title: "Comprehensive QA",
+    description: "Unit, Component, API, and E2E automated testing integrated into CI/CD pipelines.",
+  },
+  {
+    title: "Accessible UX/UI",
+    description: "Mobile-first, performant interfaces with full RTL/LTR localization support.",
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "E-Government Citizen Portal",
+    title: "KaarYab Afghanistan",
+    tagline: "Centralized Opportunity Platform & Interactive CV Builder for Afghan Youth",
+    type: "Live Production / Open Source",
     description:
-      "Full-stack government portal with JWT/RBAC, CRUD workflows, audit logging, real-time notifications, localization, and responsive UI.",
-    tech: ["React", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Docker"],
+      "Full-stack Next.js platform aggregating 7 opportunity categories with multi-criteria filtering, live deadline countdowns, real-time analytics, and an in-app multi-template CV generator with print-ready PDF export.",
+    challenge:
+      "Employment, scholarship, and skill-building opportunities in Afghanistan are fragmented. Candidates lack one trusted place to discover verified listings and build professional CVs.",
+    solution:
+      "Built a secure opportunity platform with auth, search/filter, bookmarks, profiles, CV builder, Supabase RLS, and automated quality gates.",
+    highlights: [
+      "172 automated tests (84 Unit, 70 Component, 18 Playwright E2E) — 100% pass rate",
+      "Supabase Row Level Security so users only modify their own data",
+      "GitHub Actions CI for lint, type-check, and tests before Vercel deploy",
+      "RTL/LTR localization for Dari and English",
+    ],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "Clerk",
+      "Vitest",
+      "Playwright",
+      "Vercel",
+    ],
     github: "https://github.com/Somaiyanoori",
     live: "https://github.com/Somaiyanoori",
     featured: true,
   },
   {
-    title: "KaarYab Afghanistan Live",
+    title: "E-Government Citizen Services Portal",
+    tagline: "Enterprise Digital Governance for Municipal Request Processing",
+    type: "Production Architecture System",
     description:
-      "Opportunity platform with authentication, search/filtering, bookmarks, profiles, CV building, and automated testing.",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Clerk"],
+      "Multi-role digital governance system for Citizens, Officers, Department Heads, and Admins with real-time request tracking, audit logs, and digital submission workflows.",
+    challenge:
+      "Paper-based citizen services are slow, lack transparency, and have weak role isolation between citizens and administrators.",
+    solution:
+      "Engineered a secure multi-role portal with JWT auth, RBAC, Redis caching, Socket.io updates, Dockerized services, and OpenAPI docs.",
+    highlights: [
+      "JWT + HttpOnly cookies, refresh token rotation, RBAC, rate limiting",
+      "Socket.io real-time status updates on citizen dashboards",
+      "Docker Compose with PostgreSQL, Redis, and Express services",
+      "Swagger/OpenAPI docs and production deployment checklist",
+    ],
+    tech: [
+      "React 19",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "Socket.io",
+      "Docker",
+    ],
     github: "https://github.com/Somaiyanoori",
     live: "https://github.com/Somaiyanoori",
     featured: true,
   },
   {
-    title: "Taply Backend APIs",
+    title: "Taply — Design Feedback Platform",
+    tagline: "Visual feedback APIs with secure uploads and validation",
+    type: "Backend System",
     description:
-      "Backend APIs for design uploads and visual feedback with Firebase Auth, Firestore, Cloudinary, validation, and rate limiting.",
-    tech: ["Next.js 15 API", "Firebase", "Cloudinary", "Zod", "Jest"],
+      "Backend APIs for design uploads and coordinate-based visual feedback with Firebase Auth, Firestore, Cloudinary, Zod validation, and rate limiting.",
+    challenge:
+      "Design review workflows need precise feedback on uploaded assets with secure auth and validated API contracts.",
+    solution:
+      "Built typed API routes with auth, media processing, schema validation, and abuse protection.",
+    highlights: [
+      "Firebase Auth + Firestore integration",
+      "Cloudinary image storage pipeline",
+      "Zod server-side validation",
+      "API rate limiting and test coverage with Jest",
+    ],
+    tech: ["Next.js 15 API", "Firebase", "Cloudinary", "Zod", "Jest", "Vercel"],
     github: "https://github.com/Somaiyanoori",
     live: "https://github.com/Somaiyanoori",
     featured: false,
   },
   {
-    title: "Goal Tracker",
+    title: "Product Store — Multi-State Architecture",
+    tagline: "Architectural study: React Query vs Redux Toolkit vs Context API",
+    type: "Technical Demo",
     description:
-      "Productivity application for creating and tracking goals with responsive UI, forms, state management, and backend integration.",
-    tech: ["React", "TypeScript", "Node.js"],
+      "Demonstrates separation of concerns: React Query for server-state caching, Redux Toolkit for complex cart mutations, and Context API for global UI preferences.",
+    challenge: "Teams often mix server state and client state, causing complexity and bugs.",
+    solution: "Clear architecture demo showing the right state tool for each concern.",
+    highlights: [
+      "React Query for server-state caching",
+      "Redux Toolkit for cart mutations",
+      "Context + useReducer for UI preferences",
+      "Clean separation of concerns in React",
+    ],
+    tech: ["React", "Redux Toolkit", "TanStack Query", "Context API", "Tailwind CSS"],
     github: "https://github.com/Somaiyanoori",
     live: "https://github.com/Somaiyanoori",
     featured: false,
@@ -74,17 +197,25 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    role: "QA & Web Development",
-    company: "CTI (Remote, Herat)",
+    role: "Quality Assurance & Web Developer",
+    company: "Code To Inspire (CTI) — Remote, Herat",
     date: "Nov 2025 – Feb 2026",
     description:
-      "Performed functional, regression, API, manual, and basic E2E testing. Documented defects, supported debugging, and verified fixes.",
+      "Reduced production regression bugs by 30% through automated, manual, and functional testing. Led bug reporting/documentation across teams. Executed 50+ manual test cases and validated API contracts with Postman and Vitest. Bridged feature development and quality engineering.",
   },
   {
-    role: "Web Development Training",
-    company: "CTI",
+    role: "Software Development Training",
+    company: "Code To Inspire (CTI)",
     date: "2025 – 2026",
     description:
-      "Intensive training in modern web technologies. Achieved A+ in Frontend, React, Next.js, and Backend modules.",
+      "Straight A+ across Frontend, React, Next.js, and Backend tracks. Built modern full-stack apps with testing, Docker, and production-minded architecture.",
   },
+];
+
+export const ACHIEVEMENTS = [
+  "Frontend Development Track — A+",
+  "React Development Track — A+",
+  "Next.js Development Track — A+",
+  "Backend Development Track — A+",
+  "English Language Certification — A+",
 ];

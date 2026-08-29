@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Cpu, CheckCircle2 } from "lucide-react";
+import { Sparkles, Cpu, CheckCircle2, ShieldCheck } from "lucide-react";
+import { PRINCIPLES } from "@/data/portfolio";
 
 export function About() {
   return (
@@ -13,83 +14,45 @@ export function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-12"
         >
-          <h2 className="mb-4 text-3xl font-bold md:text-5xl">
-            <span className="text-white">System.</span>
-            <span className="gradient-text">About()</span>
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">
+            Engineering with a <span className="gradient-text">&quot;Shift-Left&quot; Mindset</span>
           </h2>
-          <div className="bg-gradient-primary h-1 w-20 rounded-full"></div>
+          <div className="bg-gradient-primary h-1 w-20 rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* Terminal Window */}
+        <div className="mb-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card overflow-hidden rounded-2xl border border-white/10 shadow-2xl"
+            className="glass-card rounded-2xl border border-white/10 p-8"
           >
-            <div className="flex items-center gap-2 border-b border-white/5 bg-black/40 px-4 py-3">
-              <div className="flex gap-1.5">
-                <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                <div className="h-3 w-3 rounded-full bg-green-500"></div>
-              </div>
-              <span className="ml-2 font-mono text-xs text-gray-500">somaiya@portfolio:~</span>
-            </div>
-            <div className="overflow-x-auto p-6 font-mono text-sm leading-relaxed text-gray-300">
-              <p className="mb-2">
-                <span className="text-primary">const</span>{" "}
-                <span className="text-white">developer</span> = &#123;
-              </p>
-              <p className="mb-1 ml-4">
-                name: <span className="text-accent">"Somaiya Noori"</span>,
-              </p>
-              <p className="mb-1 ml-4">
-                location: <span className="text-accent">"Herat, Afghanistan"</span>,
-              </p>
-              <p className="mb-1 ml-4">
-                role: <span className="text-accent">"Full-Stack Web Developer"</span>,
-              </p>
-              <p className="mb-1 ml-4">
-                languages: [<span className="text-accent">"English (A+)"</span>,{" "}
-                <span className="text-accent">"Persian (Native)"</span>],
-              </p>
-              <p className="mb-1 ml-4">
-                passion:{" "}
-                <span className="text-accent">"Building modern, fast, and optimized web apps"</span>
-                ,
-              </p>
-              <p className="mb-2 ml-4">
-                problemSolver: <span className="text-info">true</span>,
-              </p>
-              <p className="mb-4">&#125;;</p>
-
-              <p className="mb-2">
-                <span className="text-gray-500">// My Mission</span>
-              </p>
-              <p className="text-white">
-                developer.<span className="text-info">execute</span>()
-              </p>
-              <p className="mt-2 text-gray-400">
-                &gt; Initiating full-stack deployment...
-                <br />
-                &gt; Delivering clean code, standard architecture, and REST APIs.
-                <br />
-                &gt; Ensuring 100% QA & Automated Testing passes.
-              </p>
-            </div>
+            <p className="mb-4 leading-relaxed text-gray-300">
+              I believe the cost of fixing a bug increases tenfold at every stage of the software
+              lifecycle. That is why I don&apos;t just write code that works — I write code that I
+              can <span className="font-semibold text-white">prove</span> works.
+            </p>
+            <p className="mb-4 leading-relaxed text-gray-300">
+              Based in <span className="font-medium text-white">Herat, Afghanistan</span>, I build
+              modern full-stack applications with React, Next.js, Node.js, and PostgreSQL. Having
+              worked in both Software Development and Quality Assurance at{" "}
+              <span className="font-medium text-white">CTI</span>, I bridge feature engineering and
+              system reliability.
+            </p>
+            <p className="leading-relaxed text-gray-300">
+              Whether implementing Row Level Security (RLS), writing Playwright E2E suites, or
+              crafting accessible RTL interfaces, I prioritize maintainability, performance, and
+              user trust.
+            </p>
           </motion.div>
 
-          {/* Right Side: AI & Strengths */}
           <div className="space-y-6">
-            {/* AI Experience Badge */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass group relative overflow-hidden rounded-2xl p-6"
+              className="glass rounded-2xl p-6"
             >
-              <div className="from-primary/10 to-info/10 absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity group-hover:opacity-100"></div>
               <div className="mb-4 flex items-center gap-4">
                 <div className="bg-info/20 text-info rounded-xl p-3">
                   <Cpu className="h-6 w-6" />
@@ -98,42 +61,57 @@ export function About() {
                   <h3 className="flex items-center gap-2 text-lg font-bold text-white">
                     AI-Enhanced Development <Sparkles className="text-accent h-4 w-4" />
                   </h3>
-                  <p className="text-sm text-gray-400">Working Smarter & Faster</p>
+                  <p className="text-sm text-gray-400">Faster delivery, higher quality</p>
                 </div>
               </div>
-              <p className="mb-4 text-sm leading-relaxed text-gray-300">
-                I actively utilize AI tools (like ChatGPT & Copilot) in my daily workflow to
-                optimize code, accelerate debugging, and write comprehensive API documentation. This
-                allows me to deliver high-quality products faster than traditional methods.
+              <p className="text-sm leading-relaxed text-gray-300">
+                I use AI tools (ChatGPT, Copilot, Claude) for debugging, documentation, test ideas,
+                and faster iteration — always with human review, clean architecture, and strong test
+                coverage.
               </p>
             </motion.div>
 
-            {/* Core Strengths Grid */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="grid grid-cols-2 gap-4"
+              transition={{ delay: 0.1 }}
+              className="glass flex items-start gap-4 rounded-2xl p-6"
             >
-              {[
-                "Problem Solving",
-                "Advanced Debugging",
-                "Team Collaboration",
-                "API Documentation",
-                "Responsive Design",
-                "Automated QA Testing",
-              ].map((strength, i) => (
-                <div
-                  key={i}
-                  className="glass hover:border-primary/30 flex items-center gap-3 rounded-xl px-4 py-3 transition-colors"
-                >
-                  <CheckCircle2 className="text-primary h-4 w-4 shrink-0" />
-                  <span className="text-xs font-medium text-gray-200 sm:text-sm">{strength}</span>
-                </div>
-              ))}
+              <div className="bg-primary/20 text-primary rounded-xl p-3">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="mb-2 text-lg font-bold text-white">Quality Philosophy</h3>
+                <p className="text-sm leading-relaxed text-gray-300">
+                  Security, testing, and performance are not final steps — they are part of the
+                  architecture from day one.
+                </p>
+              </div>
             </motion.div>
           </div>
+        </div>
+
+        {/* Core Principles */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {PRINCIPLES.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="glass hover:border-primary/30 rounded-2xl p-5 transition-colors"
+            >
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-primary mt-0.5 h-5 w-5 shrink-0" />
+                <div>
+                  <h4 className="mb-1 font-semibold text-white">{item.title}</h4>
+                  <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
