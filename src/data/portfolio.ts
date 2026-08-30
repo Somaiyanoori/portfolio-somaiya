@@ -118,8 +118,8 @@ export const PROJECTS = [
       "Playwright",
       "Vercel",
     ],
-    github: "https://github.com/Somaiyanoori",
-    live: "https://github.com/Somaiyanoori",
+    github: "https://github.com/Somaiyanoori/kaaryab-afghanistan",
+    live: "https://kaaryab-afghanistan-seven.vercel.app/",
     featured: true,
   },
   {
@@ -149,7 +149,7 @@ export const PROJECTS = [
       "Socket.io",
       "Docker",
     ],
-    github: "https://github.com/Somaiyanoori",
+    github: "https://github.com/Somaiyanoori/egov_portal",
     live: "https://github.com/Somaiyanoori",
     featured: true,
   },
@@ -170,8 +170,8 @@ export const PROJECTS = [
       "API rate limiting and test coverage with Jest",
     ],
     tech: ["Next.js 15 API", "Firebase", "Cloudinary", "Zod", "Jest", "Vercel"],
-    github: "https://github.com/Somaiyanoori",
-    live: "https://github.com/Somaiyanoori",
+    github: "https://github.com/Mlue-Code/-Taply",
+    live: "https://taply-rust.vercel.app//",
     featured: false,
   },
   {
@@ -189,8 +189,8 @@ export const PROJECTS = [
       "Clean separation of concerns in React",
     ],
     tech: ["React", "Redux Toolkit", "TanStack Query", "Context API", "Tailwind CSS"],
-    github: "https://github.com/Somaiyanoori",
-    live: "https://github.com/Somaiyanoori",
+    github: "https://github.com/Somaiyanoori/product-store",
+    live: "https://project-zyti2.vercel.app/",
     featured: false,
   },
 ];
@@ -206,7 +206,7 @@ export const EXPERIENCE = [
   {
     role: "Software Development Training",
     company: "Code To Inspire (CTI)",
-    date: "2025 – 2026",
+    date: "2024 – 2026",
     description:
       "Straight A+ across Frontend, React, Next.js, and Backend tracks. Built modern full-stack apps with testing, Docker, and production-minded architecture.",
   },
