@@ -15,21 +15,14 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
 
-      // Active section detection (scroll spy)
       const sections = NAV_ITEMS.map((item) => {
         const id = item.href.replace("#", "");
         const el = document.getElementById(id);
         if (!el) return null;
-
         const rect = el.getBoundingClientRect();
-        return {
-          name: item.name,
-          top: rect.top,
-          bottom: rect.bottom,
-        };
+        return { name: item.name, top: rect.top, bottom: rect.bottom };
       }).filter(Boolean) as { name: string; top: number; bottom: number }[];
 
-      // Pick the section whose top is closest under the navbar
       const OFFSET = 120;
       let current = "Home";
 
@@ -40,7 +33,6 @@ export function Navbar() {
         }
       }
 
-      // Near bottom of page → force Contact active
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
         current = "Contact";
       }
@@ -60,12 +52,9 @@ export function Navbar() {
   const handleNavClick = (name: string, href: string) => {
     setActive(name);
     setMobileOpen(false);
-
     const id = href.replace("#", "");
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -73,7 +62,7 @@ export function Navbar() {
       <header
         className={cn(
           "fixed top-0 right-0 left-0 z-40 px-4 transition-all duration-300 md:px-8",
-          isScrolled ? "glass py-3" : "py-6"
+          isScrolled ? "glass glow-pink-soft py-3" : "py-6"
         )}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between">
@@ -84,12 +73,12 @@ export function Navbar() {
               e.preventDefault();
               handleNavClick("Home", "#home");
             }}
-            className="group glass hover:border-primary/40 flex items-center gap-2 rounded-xl px-3 py-2 transition-colors"
+            className="group glass flex items-center gap-2 rounded-xl px-3 py-2 transition-colors hover:border-[#FFD700]/30"
           >
-            <div className="bg-gradient-primary flex h-8 w-8 items-center justify-center rounded-lg font-mono text-sm font-bold text-white shadow-md">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#FF2D78] to-[#FFD700] font-mono text-sm font-bold text-white shadow-md">
               SN
             </div>
-            <span className="group-hover:text-primary font-mono text-sm font-semibold tracking-tight text-white transition-colors">
+            <span className="font-mono text-sm font-semibold tracking-tight text-white transition-colors group-hover:text-[#FFD700]">
               somaiya.dev
             </span>
           </a>
@@ -114,7 +103,7 @@ export function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="navPill"
-                      className="from-primary to-info absolute inset-0 -z-10 rounded-full bg-gradient-to-r"
+                      className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#FF2D78] to-[#FFD700]"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -132,7 +121,7 @@ export function Navbar() {
                 e.preventDefault();
                 handleNavClick("Contact", "#contact");
               }}
-              className="bg-gradient-primary glow-pink hidden items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
+              className="glow-pink hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#FF2D78] to-[#FFD700] px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90 sm:inline-flex"
             >
               <Sparkles className="h-3.5 w-3.5" />
               <span>Let's Talk</span>
@@ -156,7 +145,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="glass-card fixed inset-x-4 top-20 z-40 rounded-2xl border border-white/10 p-6 shadow-2xl md:hidden"
+            className="glass-card fixed inset-x-4 top-20 z-40 rounded-2xl border border-[#FF2D78]/20 p-6 shadow-2xl md:hidden"
           >
             <div className="flex flex-col gap-3">
               {NAV_ITEMS.map((item) => (
@@ -170,13 +159,24 @@ export function Navbar() {
                   className={cn(
                     "rounded-xl px-4 py-3 text-sm font-medium transition-colors",
                     active === item.name
-                      ? "bg-primary/20 text-white"
+                      ? "bg-[#FF2D78]/20 text-white"
                       : "text-gray-300 hover:bg-white/5 hover:text-white"
                   )}
                 >
                   {item.name}
                 </a>
               ))}
+
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("Contact", "#contact");
+                }}
+                className="mt-2 rounded-xl bg-gradient-to-r from-[#FF2D78] to-[#FFD700] px-4 py-3 text-center text-sm font-semibold text-white"
+              >
+                Get In Touch
+              </a>
             </div>
           </motion.div>
         )}

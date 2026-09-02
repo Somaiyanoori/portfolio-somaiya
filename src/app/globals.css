@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ff2d78;
-  --color-info: #3b82f6;
-  --color-accent: #ffd700;
-  --color-background: #0a0a0f;
-  --color-surface: #1a1a2e;
+  /* Brand */
+  --color-primary: #ff2d78; /* pink */
+  --color-primary-soft: #ff6ba6;
+  --color-accent: #ffd700; /* yellow */
+  --color-accent-soft: #ffe566;
+
+  /* Surfaces */
+  --color-background: #0b0a0f;
+  --color-surface: #16121a;
 }
 
 @layer base {
@@ -19,7 +23,6 @@
     overflow-x: hidden;
   }
 
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -27,71 +30,77 @@
     background: var(--color-background);
   }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      180deg,
-      var(--color-primary),
-      var(--color-info),
-      var(--color-accent)
-    );
+    background: linear-gradient(180deg, #ff2d78, #ffd700);
     border-radius: 9999px;
+  }
+
+  ::selection {
+    background: rgba(255, 45, 120, 0.35);
+    color: white;
   }
 }
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, #ff2d78 0%, #ffd700 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .gradient-text-rainbow {
-    background: linear-gradient(
-      135deg,
-      var(--color-primary) 0%,
-      var(--color-info) 50%,
-      var(--color-accent) 100%
-    );
+    background: linear-gradient(135deg, #ff2d78 0%, #ff6ba6 40%, #ffd700 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, #ff2d78 0%, #ffd700 100%);
   }
 
   .glass {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.1);
   }
 
   .glass-card {
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.01) 100%
+      rgba(255, 45, 120, 0.1) 0%,
+      rgba(255, 215, 0, 0.05) 50%,
+      rgba(255, 255, 255, 0.02) 100%
     );
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 109, 166, 0.16);
   }
 
   .glow-pink {
-    box-shadow: 0 0 35px rgba(255, 45, 120, 0.35);
+    box-shadow: 0 0 35px rgba(255, 45, 120, 0.4);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.28);
+  }
+
+  .glow-pink-soft {
+    box-shadow: 0 0 22px rgba(255, 45, 120, 0.25);
   }
 
   .grid-pattern {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 45, 120, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 215, 0, 0.035) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 
   .aurora-glow {
     position: absolute;
     filter: blur(120px);
-    opacity: 0.25;
+    opacity: 0.28;
     pointer-events: none;
     border-radius: 9999px;
   }
@@ -103,7 +112,7 @@
   @keyframes float {
     0%,
     100% {
-      transform: translateY(0px);
+      transform: translateY(0);
     }
     50% {
       transform: translateY(-15px);

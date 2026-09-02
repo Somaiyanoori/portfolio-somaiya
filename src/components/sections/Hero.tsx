@@ -20,9 +20,9 @@ export function Hero() {
       id="home"
       className="grid-pattern relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-28 pb-16 md:px-8"
     >
-      <div className="aurora-glow bg-primary -top-20 -left-20 h-96 w-96" />
-      <div className="aurora-glow bg-info top-1/3 -right-20 h-96 w-96" />
-      <div className="aurora-glow bg-accent bottom-0 left-1/3 h-80 w-80" />
+      <div className="aurora-glow -top-24 -left-24 h-[28rem] w-[28rem] bg-[#FF2D78]" />
+      <div className="aurora-glow top-1/3 -right-20 h-[24rem] w-[24rem] bg-[#FFD700] opacity-20" />
+      <div className="aurora-glow bottom-0 left-1/3 h-[22rem] w-[22rem] bg-[#FF6BA6]" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
         <motion.div
@@ -115,46 +115,53 @@ export function Hero() {
           transition={{ delay: 0.5 }}
           className="mb-10 flex flex-wrap items-center justify-center gap-4"
         >
+          {/* Primary CTA - Pink → Yellow */}
           <a
             href="#projects"
-            className="bg-gradient-primary glow-pink flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
+            className="glow-pink flex items-center gap-2 rounded-full bg-gradient-to-r from-[#FF2D78] to-[#FFD700] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
           >
             <Code className="h-4 w-4" />
             View My Work
           </a>
 
+          {/* CV button - Yellow border */}
           <a
             href="/resume.pdf"
             download="Somaiya_Noori_FullStack_Developer_CV.pdf"
-            className="glass text-accent border-accent/30 hover:border-accent/60 flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-semibold transition-all hover:scale-105 hover:bg-white/10 active:scale-95"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass flex items-center gap-2 rounded-full border border-[#FFD700]/35 px-6 py-3.5 text-sm font-semibold text-[#FFD700] transition-all hover:scale-105 hover:border-[#FFD700]/70 hover:bg-[#FFD700]/10 active:scale-95"
           >
             <Download className="h-4 w-4" />
             Download CV
           </a>
 
+          {/* Contact */}
           <a
             href="#contact"
-            className="glass flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 active:scale-95"
+            className="glass flex items-center gap-2 rounded-full border border-white/10 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:border-[#FF2D78]/40 hover:bg-[#FF2D78]/10 active:scale-95"
           >
             <Mail className="h-4 w-4" />
             Get In Touch
           </a>
 
+          {/* GitHub */}
           <a
             href={SITE_DATA.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-white/10 active:scale-95"
+            className="glass flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:border-[#FF2D78]/30 active:scale-95"
           >
             <GithubIcon className="h-4 w-4" />
             GitHub
           </a>
 
+          {/* LinkedIn */}
           <a
             href={SITE_DATA.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="glass text-info flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold transition-all hover:scale-105 hover:bg-white/10 active:scale-95"
+            className="glass flex items-center gap-2 rounded-full px-5 py-3.5 text-sm font-semibold text-[#FFD700] transition-all hover:scale-105 hover:border-[#FFD700]/40 active:scale-95"
           >
             <LinkedinIcon className="h-4 w-4" />
             LinkedIn

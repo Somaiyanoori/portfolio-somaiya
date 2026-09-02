@@ -219,7 +219,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="bg-gradient-primary glow-pink flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95 disabled:opacity-50"
+                className="glow-pink flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FF2D78] to-[#FFD700] px-6 py-3.5 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95 disabled:opacity-50"
               >
                 {status === "loading" ? (
                   <span>Sending...</span>
