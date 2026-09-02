@@ -197,18 +197,30 @@ export const PROJECTS = [
 
 export const EXPERIENCE = [
   {
-    role: "Quality Assurance & Web Developer",
-    company: "Code To Inspire (CTI) — Remote, Herat",
+    role: "QA Tester",
+    company: "Code to Inspire (CTI)",
+    employment: "Full-time · Remote",
     date: "Nov 2025 – Feb 2026",
-    description:
-      "Reduced production regression bugs by 30% through automated, manual, and functional testing. Led bug reporting/documentation across teams. Executed 50+ manual test cases and validated API contracts with Postman and Vitest. Bridged feature development and quality engineering.",
+    description: [
+      "Tested new features, functionalities, and integrations for an online educational platform.",
+      "Created and executed test cases based on project requirements and development milestones.",
+      "Identified and documented bugs with clear reproduction steps and detailed reports.",
+      "Performed usability and UI testing and reported visual and functional issues.",
+      "Reviewed implemented components and fixed UI/component issues when needed.",
+      "Collaborated with developers to verify fixes and ensure features met expected requirements.",
+      "Prepared QA reports and supported debugging throughout the development process.",
+    ],
   },
   {
     role: "Software Development Training",
-    company: "Code To Inspire (CTI)",
-    date: "2024 – 2026",
-    description:
-      "Straight A+ across Frontend, React, Next.js, and Backend tracks. Built modern full-stack apps with testing, Docker, and production-minded architecture.",
+    company: "Code to Inspire (CTI)",
+    employment: "Training Program",
+    date: "2025 – 2026",
+    description: [
+      "Completed full-stack training with A+ grades in Frontend, React, Next.js, and Backend.",
+      "Built modern web applications using React, Next.js, TypeScript, Node.js, and PostgreSQL.",
+      "Practiced REST APIs, authentication, testing workflows, and cloud deployment fundamentals.",
+    ],
   },
 ];
 
