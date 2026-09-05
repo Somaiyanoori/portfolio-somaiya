@@ -62,12 +62,12 @@ export function Contact() {
             Let&apos;s Build <span className="gradient-text">Quality Software</span> Together.
           </h2>
           <p className="mx-auto max-w-2xl text-sm text-gray-400 md:text-base">
-            I am open to Full-Stack Developer roles, Remote positions, and Technical Collaborations.
+            I am open to Frontend Developer roles, Remote positions, and Technical Collaborations.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-          {/* Left: Contact Information */}
+          {/* Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -77,13 +77,10 @@ export function Contact() {
             <div className="glass space-y-6 rounded-2xl p-8">
               <h3 className="flex items-center gap-2 text-2xl font-bold text-white">
                 <span>Contact Information</span>
-                <Sparkles className="text-accent h-5 w-5" />
+                <Sparkles className="h-5 w-5 text-[#FFD700]" />
               </h3>
 
-              <p className="text-sm leading-relaxed text-gray-400">
-                {SITE_DATA.availability ||
-                  "Open to Full-Stack roles, Remote work, and technical collaborations worldwide."}
-              </p>
+              <p className="text-sm leading-relaxed text-gray-400">{SITE_DATA.availability}</p>
 
               <div className="space-y-4 text-sm text-gray-300">
                 {/* Email */}
@@ -91,7 +88,7 @@ export function Contact() {
                   href={`mailto:${SITE_DATA.email}`}
                   className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-white/5"
                 >
-                  <div className="bg-primary/20 text-primary rounded-xl p-3 transition-transform group-hover:scale-110">
+                  <div className="rounded-xl bg-[#FF2D78]/20 p-3 text-[#FF2D78] transition-transform group-hover:scale-110">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
@@ -106,7 +103,7 @@ export function Contact() {
                     href={`tel:${SITE_DATA.phone}`}
                     className="group flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-white/5"
                   >
-                    <div className="bg-accent/20 text-accent rounded-xl p-3 transition-transform group-hover:scale-110">
+                    <div className="rounded-xl bg-[#FFD700]/20 p-3 text-[#FFD700] transition-transform group-hover:scale-110">
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
@@ -118,7 +115,7 @@ export function Contact() {
 
                 {/* Location */}
                 <div className="flex items-center gap-4 rounded-xl p-3">
-                  <div className="bg-info/20 text-info rounded-xl p-3">
+                  <div className="rounded-xl bg-[#FF6BA6]/20 p-3 text-[#FF6BA6]">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -130,7 +127,6 @@ export function Contact() {
                 </div>
               </div>
 
-              {/* Social */}
               <div className="flex gap-4 border-t border-white/10 pt-4">
                 <a
                   href={SITE_DATA.github}
@@ -145,14 +141,14 @@ export function Contact() {
                   href={SITE_DATA.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass text-info rounded-xl p-3 transition-colors hover:bg-white/10"
+                  className="glass rounded-xl p-3 text-[#FFD700] transition-colors hover:bg-white/10"
                   aria-label="LinkedIn"
                 >
                   <LinkedinIcon className="h-5 w-5" />
                 </a>
                 <a
                   href={`mailto:${SITE_DATA.email}`}
-                  className="glass text-primary rounded-xl p-3 transition-colors hover:bg-white/10"
+                  className="glass rounded-xl p-3 text-[#FF2D78] transition-colors hover:bg-white/10"
                   aria-label="Email"
                 >
                   <Mail className="h-5 w-5" />
@@ -161,7 +157,7 @@ export function Contact() {
             </div>
           </motion.div>
 
-          {/* Right: Form */}
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -176,7 +172,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your Name"
-                  className="focus:border-primary w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:outline-none"
+                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:border-[#FF2D78] focus:outline-none"
                 />
               </div>
 
@@ -187,7 +183,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="your.email@example.com"
-                  className="focus:border-primary w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:outline-none"
+                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:border-[#FF2D78] focus:outline-none"
                 />
               </div>
 
@@ -198,7 +194,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell me about a role, project, or collaboration..."
-                  className="focus:border-primary w-full resize-none rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:outline-none"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white placeholder-gray-500 transition-colors focus:border-[#FF2D78] focus:outline-none"
                 />
               </div>
 

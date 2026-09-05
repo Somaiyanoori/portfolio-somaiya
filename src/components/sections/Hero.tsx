@@ -8,11 +8,11 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
 export function Hero() {
   const dynamicWords = [
-    "Secure Full-Stack Systems",
-    "Shift-Left QA Workflows",
-    "Type-Safe Next.js Apps",
-    "Automated Test Suites (172+)",
-    "Production-Ready APIs",
+    "High-Performance Frontend Systems",
+    "Clean React & Next.js Interfaces",
+    "Type-Safe UI Architecture",
+    "API-Integrated Web Apps",
+    "Accessible RTL/LTR Experiences",
   ];
 
   return (
@@ -20,24 +20,26 @@ export function Hero() {
       id="home"
       className="grid-pattern relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-28 pb-16 md:px-8"
     >
+      {/* Auroras: pink + yellow */}
       <div className="aurora-glow -top-24 -left-24 h-[28rem] w-[28rem] bg-[#FF2D78]" />
       <div className="aurora-glow top-1/3 -right-20 h-[24rem] w-[24rem] bg-[#FFD700] opacity-20" />
       <div className="aurora-glow bottom-0 left-1/3 h-[22rem] w-[22rem] bg-[#FF6BA6]" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+        {/* Availability */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="glass mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-2"
         >
           <span className="relative flex h-2.5 w-2.5">
-            <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
-            <span className="bg-primary relative inline-flex h-2.5 w-2.5 rounded-full" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF2D78] opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#FF2D78]" />
           </span>
           <span className="font-mono text-xs font-medium text-gray-300">
-            Available for Full-Stack & Remote Roles
+            Available for Frontend & Remote Roles
           </span>
-          <Sparkles className="text-accent h-3.5 w-3.5 animate-pulse" />
+          <Sparkles className="h-3.5 w-3.5 animate-pulse text-[#FFD700]" />
         </motion.div>
 
         <motion.p
@@ -46,7 +48,7 @@ export function Hero() {
           transition={{ delay: 0.1 }}
           className="mb-5 max-w-3xl text-sm text-gray-400 italic md:text-base"
         >
-          “{SITE_DATA.headline}”
+          &ldquo;{SITE_DATA.headline}&rdquo;
         </motion.p>
 
         <motion.p
@@ -86,12 +88,15 @@ export function Hero() {
           transition={{ delay: 0.4 }}
           className="mb-8 max-w-3xl text-sm leading-relaxed text-gray-400 sm:text-base"
         >
-          {SITE_DATA.subHeadline} Based in{" "}
+          I build web applications where <span className="font-medium text-white">clean UI</span>,{" "}
+          <span className="font-medium text-white">robust API integration</span>, and{" "}
+          <span className="font-medium text-white">performance</span> are baked into the
+          architecture from day one. Based in{" "}
           <span className="font-medium text-white">Herat, Afghanistan</span>. Specializing in{" "}
-          <span className="text-primary font-medium">React 19</span>,{" "}
-          <span className="text-info font-medium">Next.js</span>,{" "}
-          <span className="text-accent font-medium">TypeScript</span>, Node.js, PostgreSQL, and
-          automated QA.
+          <span className="font-medium text-[#FF2D78]">React 19</span>,{" "}
+          <span className="font-medium text-[#FFD700]">Next.js</span>,{" "}
+          <span className="font-medium text-white">TypeScript</span>, automated QA, with strong{" "}
+          <span className="font-medium text-white">Node.js/PostgreSQL</span> fundamentals.
         </motion.p>
 
         {/* Quick Stats */}
@@ -109,13 +114,13 @@ export function Hero() {
           ))}
         </motion.div>
 
+        {/* Actions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="mb-10 flex flex-wrap items-center justify-center gap-4"
         >
-          {/* Primary CTA - Pink → Yellow */}
           <a
             href="#projects"
             className="glow-pink flex items-center gap-2 rounded-full bg-gradient-to-r from-[#FF2D78] to-[#FFD700] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
@@ -124,10 +129,9 @@ export function Hero() {
             View My Work
           </a>
 
-          {/* CV button - Yellow border */}
           <a
             href="/resume.pdf"
-            download="Somaiya_Noori_FullStack_Developer_CV.pdf"
+            download="Somaiya_Noori_Frontend_Developer_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="glass flex items-center gap-2 rounded-full border border-[#FFD700]/35 px-6 py-3.5 text-sm font-semibold text-[#FFD700] transition-all hover:scale-105 hover:border-[#FFD700]/70 hover:bg-[#FFD700]/10 active:scale-95"
@@ -136,7 +140,6 @@ export function Hero() {
             Download CV
           </a>
 
-          {/* Contact */}
           <a
             href="#contact"
             className="glass flex items-center gap-2 rounded-full border border-white/10 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:scale-105 hover:border-[#FF2D78]/40 hover:bg-[#FF2D78]/10 active:scale-95"
@@ -145,7 +148,6 @@ export function Hero() {
             Get In Touch
           </a>
 
-          {/* GitHub */}
           <a
             href={SITE_DATA.github}
             target="_blank"
@@ -156,7 +158,6 @@ export function Hero() {
             GitHub
           </a>
 
-          {/* LinkedIn */}
           <a
             href={SITE_DATA.linkedin}
             target="_blank"
@@ -168,6 +169,7 @@ export function Hero() {
           </a>
         </motion.div>
 
+        {/* Scroll indicator */}
         <motion.a
           href="#about"
           animate={{ y: [0, 8, 0] }}

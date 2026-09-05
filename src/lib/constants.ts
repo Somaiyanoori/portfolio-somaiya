@@ -1,16 +1,16 @@
 export const SITE_DATA = {
   name: "Somaiya Noori",
-  role: "Full-Stack Engineer & QA Specialist",
+  role: "Frontend Developer",
   location: "Herat, Afghanistan",
   email: "somayenoori786@icloud.com",
   phone: "+93 795844235",
   github: "https://github.com/Somaiyanoori",
-  linkedin: "https://linkedin.com/in/somaiya-noori-aa7b50346",
-  headline: "Software quality is not an accident; it is the result of intelligent effort.",
+  linkedin: "https://linkedin.com/in/somaiya-noori",
+  headline: "I engineer High-Performance Frontend Systems.",
   subHeadline:
-    "I build web applications where security, testing, and performance are baked into the architecture from day one.",
-  bio: "Full-Stack Engineer & QA Specialist based in Herat, Afghanistan. I bridge feature engineering and system reliability with React, Next.js, Node.js, PostgreSQL, and automated testing.",
-  availability: "Open to Full-Stack roles, Remote positions, and Technical Collaborations",
+    "I build web applications where clean UI, robust API integration, and performance are baked into the architecture from day one.",
+  bio: "Frontend Developer with strong full-stack fundamentals. Specializing in React 19, Next.js, TypeScript, and automated QA — with practical Node.js/PostgreSQL knowledge for reliable API integration.",
+  availability: "Open to Frontend Developer roles, Remote positions, and Technical Collaborations",
 };
 
 export const NAV_ITEMS = [

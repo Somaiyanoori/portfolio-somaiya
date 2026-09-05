@@ -19,23 +19,25 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0F",
+  themeColor: "#0B0A0F",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  title: "Somaiya Noori | Full-Stack Web Developer",
+  title: "Somaiya Noori | Frontend Developer",
   description:
-    "Full-Stack Web Developer portfolio of Somaiya Noori. Specializing in React 19, Next.js 15, TypeScript, Node.js, and AI-assisted web engineering.",
+    "Frontend Developer specializing in React 19, Next.js, TypeScript, and high-performance UI — with strong Node.js/PostgreSQL fundamentals and QA experience.",
   keywords: [
     "Somaiya Noori",
-    "Full-Stack Developer",
-    "Next.js Developer",
+    "Frontend Developer",
     "React Developer",
+    "Next.js Developer",
     "TypeScript",
-    "Node.js",
+    "UI Engineer",
+    "QA Tester",
     "Herat Afghanistan",
+    "Remote Frontend",
   ],
 };
 
@@ -47,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} text-foreground bg-background font-sans antialiased selection:bg-primary selection:text-white`}
+        className={`${inter.variable} ${jetbrainsMono.variable} bg-background text-foreground font-sans antialiased selection:bg-[#FF2D78] selection:text-white`}
       >
         <SmoothScroll>
           <ScrollProgress />

@@ -15,9 +15,10 @@ export function About() {
           className="mb-12"
         >
           <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">
-            Engineering with a <span className="gradient-text">&quot;Shift-Left&quot; Mindset</span>
+            Frontend Engineering with a{" "}
+            <span className="gradient-text">&quot;Quality-First&quot; Mindset</span>
           </h2>
-          <div className="bg-gradient-primary h-1 w-20 rounded-full" />
+          <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF2D78] to-[#FFD700]" />
         </motion.div>
 
         <div className="mb-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -28,21 +29,24 @@ export function About() {
             className="glass-card rounded-2xl border border-white/10 p-8"
           >
             <p className="mb-4 leading-relaxed text-gray-300">
-              I believe the cost of fixing a bug increases tenfold at every stage of the software
-              lifecycle. That is why I don&apos;t just write code that works — I write code that I
-              can <span className="font-semibold text-white">prove</span> works.
-            </p>
-            <p className="mb-4 leading-relaxed text-gray-300">
               Based in <span className="font-medium text-white">Herat, Afghanistan</span>, I build
-              modern full-stack applications with React, Next.js, Node.js, and PostgreSQL. Having
-              worked in both Software Development and Quality Assurance at{" "}
-              <span className="font-medium text-white">CTI</span>, I bridge feature engineering and
-              system reliability.
+              modern web applications with <span className="font-medium text-white">React</span>,{" "}
+              <span className="font-medium text-white">Next.js</span>,{" "}
+              <span className="font-medium text-white">TypeScript</span>, and{" "}
+              <span className="font-medium text-white">Tailwind</span>.
             </p>
+
+            <p className="mb-4 leading-relaxed text-gray-300">
+              Having worked in both Software Development and Quality Assurance at{" "}
+              <span className="font-medium text-white">CTI</span>, I bridge beautiful UI engineering
+              with system reliability.
+            </p>
+
             <p className="leading-relaxed text-gray-300">
-              Whether implementing Row Level Security (RLS), writing Playwright E2E suites, or
-              crafting accessible RTL interfaces, I prioritize maintainability, performance, and
-              user trust.
+              Because I understand backend environments{" "}
+              <span className="font-medium text-white">(Node.js, PostgreSQL)</span>, I write
+              frontend code that consumes APIs efficiently, handles state predictably, and manages
+              security thoughtfully.
             </p>
           </motion.div>
 
@@ -54,12 +58,12 @@ export function About() {
               className="glass rounded-2xl p-6"
             >
               <div className="mb-4 flex items-center gap-4">
-                <div className="bg-info/20 text-info rounded-xl p-3">
+                <div className="rounded-xl bg-[#FFD700]/15 p-3 text-[#FFD700]">
                   <Cpu className="h-6 w-6" />
                 </div>
                 <div>
                   <h3 className="flex items-center gap-2 text-lg font-bold text-white">
-                    AI-Enhanced Development <Sparkles className="text-accent h-4 w-4" />
+                    AI-Enhanced Development <Sparkles className="h-4 w-4 text-[#FFD700]" />
                   </h3>
                   <p className="text-sm text-gray-400">Faster delivery, higher quality</p>
                 </div>
@@ -78,21 +82,21 @@ export function About() {
               transition={{ delay: 0.1 }}
               className="glass flex items-start gap-4 rounded-2xl p-6"
             >
-              <div className="bg-primary/20 text-primary rounded-xl p-3">
+              <div className="rounded-xl bg-[#FF2D78]/15 p-3 text-[#FF2D78]">
                 <ShieldCheck className="h-6 w-6" />
               </div>
               <div>
                 <h3 className="mb-2 text-lg font-bold text-white">Quality Philosophy</h3>
                 <p className="text-sm leading-relaxed text-gray-300">
-                  Security, testing, and performance are not final steps — they are part of the
-                  architecture from day one.
+                  Clean UI, accessible experiences, and API-safe frontend architecture — from day
+                  one, not as an afterthought.
                 </p>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Core Principles */}
+        {/* Principles */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {PRINCIPLES.map((item, i) => (
             <motion.div
@@ -101,10 +105,10 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="glass hover:border-primary/30 rounded-2xl p-5 transition-colors"
+              className="glass rounded-2xl p-5 transition-colors hover:border-[#FF2D78]/30"
             >
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="text-primary mt-0.5 h-5 w-5 shrink-0" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#FF2D78]" />
                 <div>
                   <h4 className="mb-1 font-semibold text-white">{item.title}</h4>
                   <p className="text-sm leading-relaxed text-gray-400">{item.description}</p>
