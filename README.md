@@ -1,4 +1,6 @@
-#  Somaiya Noori — Full-Stack Developer Portfolio
+# Somaiya Noori — Frontend Developer
+
+Frontend-focused engineer with strong full-stack fundamentals (React 19, Next.js, TypeScript, Node.js, PostgreSQL) and QA experience.
 
 <div align="center">
 
