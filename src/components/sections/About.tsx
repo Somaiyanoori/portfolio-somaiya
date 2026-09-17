@@ -15,7 +15,7 @@ export function About() {
           className="mb-12"
         >
           <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">
-            Frontend Engineering with a{" "}
+            Full-Stack Engineering with a{" "}
             <span className="gradient-text">&quot;Quality-First&quot; Mindset</span>
           </h2>
           <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF2D78] to-[#FFD700]" />
@@ -30,23 +30,28 @@ export function About() {
           >
             <p className="mb-4 leading-relaxed text-gray-300">
               Based in <span className="font-medium text-white">Herat, Afghanistan</span>, I build
-              modern web applications with <span className="font-medium text-white">React</span>,{" "}
+              modern full-stack web applications with{" "}
+              <span className="font-medium text-white">React</span>,{" "}
               <span className="font-medium text-white">Next.js</span>,{" "}
-              <span className="font-medium text-white">TypeScript</span>, and{" "}
-              <span className="font-medium text-white">Tailwind</span>.
+              <span className="font-medium text-white">TypeScript</span>,{" "}
+              <span className="font-medium text-white">Node.js</span>,{" "}
+              <span className="font-medium text-white">Express</span>, and{" "}
+              <span className="font-medium text-white">PostgreSQL</span>.
             </p>
 
             <p className="mb-4 leading-relaxed text-gray-300">
               Having worked in both Software Development and Quality Assurance at{" "}
-              <span className="font-medium text-white">CTI</span>, I bridge beautiful UI engineering
-              with system reliability.
+              <span className="font-medium text-white">CTI</span>, I connect product UI, API design,
+              data flow, and release quality into one reliable delivery process.
             </p>
 
             <p className="leading-relaxed text-gray-300">
-              Because I understand backend environments{" "}
-              <span className="font-medium text-white">(Node.js, PostgreSQL)</span>, I write
-              frontend code that consumes APIs efficiently, handles state predictably, and manages
-              security thoughtfully.
+              I implement <span className="font-medium text-white">authentication</span>,{" "}
+              <span className="font-medium text-white">CRUD systems</span>,{" "}
+              <span className="font-medium text-white">validation</span>,{" "}
+              <span className="font-medium text-white">database integrations</span>, and{" "}
+              <span className="font-medium text-white">test coverage</span> — so features are
+              usable, secure, and production-ready.
             </p>
           </motion.div>
 
@@ -69,9 +74,9 @@ export function About() {
                 </div>
               </div>
               <p className="text-sm leading-relaxed text-gray-300">
-                I use AI tools (ChatGPT, Copilot, Claude) for debugging, documentation, test ideas,
+                I use AI tools (ChatGPT, Copilot, Claude) for debugging, documentation, test design,
                 and faster iteration — always with human review, clean architecture, and strong test
-                coverage.
+                coverage across the full stack.
               </p>
             </motion.div>
 
@@ -88,8 +93,8 @@ export function About() {
               <div>
                 <h3 className="mb-2 text-lg font-bold text-white">Quality Philosophy</h3>
                 <p className="text-sm leading-relaxed text-gray-300">
-                  Clean UI, accessible experiences, and API-safe frontend architecture — from day
-                  one, not as an afterthought.
+                  Clean UI, secure APIs, reliable databases, and tested workflows — built into the
+                  system from day one, not as an afterthought.
                 </p>
               </div>
             </motion.div>

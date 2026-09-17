@@ -62,7 +62,8 @@ export function Contact() {
             Let&apos;s Build <span className="gradient-text">Quality Software</span> Together.
           </h2>
           <p className="mx-auto max-w-2xl text-sm text-gray-400 md:text-base">
-            I am open to Frontend Developer roles, Remote positions, and Technical Collaborations.
+            I am open to Full-Stack Web Developer roles, Remote positions, and Technical
+            Collaborations.
           </p>
         </motion.div>
 

@@ -8,11 +8,11 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons/BrandIcons";
 
 export function Hero() {
   const dynamicWords = [
-    "High-Performance Frontend Systems",
-    "Clean React & Next.js Interfaces",
-    "Type-Safe UI Architecture",
-    "API-Integrated Web Apps",
-    "Accessible RTL/LTR Experiences",
+    "Full-Stack Web Applications",
+    "React + Node.js Systems",
+    "Type-Safe APIs & UIs",
+    "Secure Auth & Data Flows",
+    "Tested, Production-Ready Features",
   ];
 
   return (
@@ -37,7 +37,7 @@ export function Hero() {
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#FF2D78]" />
           </span>
           <span className="font-mono text-xs font-medium text-gray-300">
-            Available for Frontend & Remote Roles
+            Available for Full-Stack & Remote Roles
           </span>
           <Sparkles className="h-3.5 w-3.5 animate-pulse text-[#FFD700]" />
         </motion.div>
@@ -88,15 +88,16 @@ export function Hero() {
           transition={{ delay: 0.4 }}
           className="mb-8 max-w-3xl text-sm leading-relaxed text-gray-400 sm:text-base"
         >
-          I build web applications where <span className="font-medium text-white">clean UI</span>,{" "}
-          <span className="font-medium text-white">robust API integration</span>, and{" "}
-          <span className="font-medium text-white">performance</span> are baked into the
-          architecture from day one. Based in{" "}
+          I build end-to-end web applications where{" "}
+          <span className="font-medium text-white">clean UI</span>,{" "}
+          <span className="font-medium text-white">reliable APIs</span>,{" "}
+          <span className="font-medium text-white">databases</span>, and{" "}
+          <span className="font-medium text-white">quality testing</span> work together. Based in{" "}
           <span className="font-medium text-white">Herat, Afghanistan</span>. Specializing in{" "}
-          <span className="font-medium text-[#FF2D78]">React 19</span>,{" "}
-          <span className="font-medium text-[#FFD700]">Next.js</span>,{" "}
-          <span className="font-medium text-white">TypeScript</span>, automated QA, with strong{" "}
-          <span className="font-medium text-white">Node.js/PostgreSQL</span> fundamentals.
+          <span className="font-medium text-[#FF2D78]">React / Next.js</span>,{" "}
+          <span className="font-medium text-[#FFD700]">Node.js / Express</span>,{" "}
+          <span className="font-medium text-white">TypeScript</span>,{" "}
+          <span className="font-medium text-white">PostgreSQL / Prisma</span>, and automated QA.
         </motion.p>
 
         {/* Quick Stats */}
@@ -131,7 +132,7 @@ export function Hero() {
 
           <a
             href="/resume.pdf"
-            download="Somaiya_Noori_Frontend_Developer_CV.pdf"
+            download="Somaiya_Noori_Full_Stack_Web_Developer_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="glass flex items-center gap-2 rounded-full border border-[#FFD700]/35 px-6 py-3.5 text-sm font-semibold text-[#FFD700] transition-all hover:scale-105 hover:border-[#FFD700]/70 hover:bg-[#FFD700]/10 active:scale-95"

@@ -2,7 +2,7 @@
   "name": "portfolio-somaiya",
   "version": "1.0.0",
   "private": true,
-  "description": "Full-Stack Developer Portfolio - Somaiya Noori",
+  "description": "Full-Stack Web Developer Portfolio - Somaiya Noori",
   "author": "Somaiya Noori <somayenoori786@icloud.com>",
   "scripts": {
     "dev": "next dev",

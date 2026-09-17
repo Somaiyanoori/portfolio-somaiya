@@ -25,19 +25,22 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Somaiya Noori | Frontend Developer",
+  title: "Somaiya Noori | Full-Stack Web Developer",
   description:
-    "Frontend Developer specializing in React 19, Next.js, TypeScript, and high-performance UI — with strong Node.js/PostgreSQL fundamentals and QA experience.",
+    "Full-Stack Web Developer specializing in React, Next.js, TypeScript, Node.js, PostgreSQL, and QA — building end-to-end web applications with strong testing practices.",
   keywords: [
     "Somaiya Noori",
-    "Frontend Developer",
+    "Full-Stack Web Developer",
+    "Full Stack Engineer",
     "React Developer",
     "Next.js Developer",
+    "Node.js Developer",
     "TypeScript",
-    "UI Engineer",
-    "QA Tester",
+    "PostgreSQL",
+    "Prisma",
+    "QA Specialist",
     "Herat Afghanistan",
-    "Remote Frontend",
+    "Remote Full-Stack",
   ],
 };
 

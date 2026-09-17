@@ -24,11 +24,11 @@ export function GitHubActivity() {
         >
           <div className="glass mb-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-xs text-[#FF2D78]">
             <GithubIcon className="h-4 w-4" />
-            <span>frontend_engineering_activity</span>
+            <span>full_stack_engineering_activity</span>
           </div>
           <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">GitHub & Code Activity</h2>
           <p className="mx-auto max-w-xl text-sm text-gray-400 md:text-base">
-            Frontend-focused engineering with strong API, testing, and backend fundamentals.
+            Full-stack engineering across UI, APIs, databases, auth, and automated testing.
           </p>
         </motion.div>
 
@@ -95,20 +95,25 @@ export function GitHubActivity() {
                 </div>
                 <div className="pl-4">
                   <span className="text-pink-300">role</span>:{" "}
-                  <span className="text-green-400">&quot;Frontend Developer&quot;</span>,
+                  <span className="text-green-400">&quot;Full-Stack Web Developer&quot;</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-pink-300">core</span>: [
+                  <span className="text-pink-300">frontend</span>: [
                   <span className="text-green-400">&quot;React 19&quot;</span>,{" "}
                   <span className="text-green-400">&quot;Next.js 15&quot;</span>,{" "}
                   <span className="text-green-400">&quot;TypeScript&quot;</span>],
                 </div>
                 <div className="pl-4">
-                  <span className="text-pink-300">apiIntegration</span>: [
+                  <span className="text-pink-300">backend</span>: [
                   <span className="text-green-400">&quot;Node.js&quot;</span>,{" "}
                   <span className="text-green-400">&quot;Express&quot;</span>,{" "}
+                  <span className="text-green-400">&quot;REST APIs&quot;</span>],
+                </div>
+                <div className="pl-4">
+                  <span className="text-pink-300">database</span>: [
                   <span className="text-green-400">&quot;PostgreSQL&quot;</span>,{" "}
-                  <span className="text-green-400">&quot;Prisma&quot;</span>],
+                  <span className="text-green-400">&quot;Prisma&quot;</span>,{" "}
+                  <span className="text-green-400">&quot;Supabase&quot;</span>],
                 </div>
                 <div className="pl-4">
                   <span className="text-pink-300">qaTesting</span>: [
@@ -121,17 +126,13 @@ export function GitHubActivity() {
                   <span className="text-[#FFD700]">true</span>,
                 </div>
                 <div className="pl-4">
-                  <span className="text-pink-300">cleanCode</span>:{" "}
-                  <span className="text-[#FFD700]">true</span>,
-                </div>
-                <div className="pl-4">
                   <span className="text-pink-300">status</span>:{" "}
                   <span className="text-green-400">&quot;Ready for impact&quot;</span>,
                 </div>
                 <div>&#125;;</div>
                 <div className="pt-2 text-gray-500">
-                  <span className="animate-pulse text-[#FF2D78]">⚡</span> // Frontend-focused.
-                  Backend-aware.
+                  <span className="animate-pulse text-[#FF2D78]">⚡</span> // Full-stack.
+                  Quality-driven. Production-minded.
                 </div>
               </div>
             </div>
